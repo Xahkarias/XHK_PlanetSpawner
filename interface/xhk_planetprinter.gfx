@@ -1,0 +1,6 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_xhk_planetspawner_base_build_icon
+        textureFile = gfx/interface/icons/technologies/giga_tech_terraform_barren.dds
+    }
+}

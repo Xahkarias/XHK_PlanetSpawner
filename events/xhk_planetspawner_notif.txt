@@ -1,0 +1,23 @@
+namespace = xhk_planetspawner_notif
+
+country_event = {
+    id = xhk_planetspawner_notif.001
+    title = xhk_planetspawner_notif.001.name
+    desc = xhk_planetspawner_notif.001.desc
+    picture = GFX_evt_mining_operations
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:giga_planet
+    is_triggered_only = yes
+    option = { name = xhk_planetspawner_notif.001.a }
+}
+
+country_event = {
+    id = xhk_planetspawner_notif.002
+    title = xhk_planetspawner_notif.002.name
+    desc = xhk_planetspawner_notif.002.desc
+    picture = GFX_evt_tomb_world
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:giga_planet
+    is_triggered_only = yes
+    option = { name = xhk_planetspawner_notif.002.a }
+}
