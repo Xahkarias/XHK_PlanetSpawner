@@ -24,7 +24,7 @@ xhk_planetspawner_base = {
     prerequisites = { "giga_tech_planet_assembly" }
 
     potential = {
-        always = yes
+        has_technology = giga_tech_planet_assembly
     }
 
     possible = {
@@ -88,7 +88,7 @@ xhk_planetspawner_small = {
         category = megastructures
         cost = {
             unity = 2500
-            giga_sr_bulk_matter = 12
+            giga_sr_bulk_matter = 10
         }
     }
 
@@ -99,7 +99,7 @@ xhk_planetspawner_small = {
         fromfrom = {
             solar_system = {
                 spawn_planet = {
-                    class = pc_ll_temperate
+                    class = pc_barren
                     name = "Created Planet"
                     location = fromfrom
                     size = 10
@@ -141,7 +141,7 @@ xhk_planetspawner_medium = {
         category = megastructures
         cost = {
             unity = 2500
-            giga_sr_bulk_matter = 25
+            giga_sr_bulk_matter = 20
         }
     }
 
