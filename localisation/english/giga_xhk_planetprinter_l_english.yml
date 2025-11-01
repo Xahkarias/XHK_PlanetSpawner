@@ -1,13 +1,15 @@
 ﻿l_english:
 
  xhk_planetspawner_base: "$gc_giga$Planet Construction Site"
- xhk_planetspawner_base_DESC: "The construction site that will, after the consumption of a staggering amount of mass, result in a new planet."
+ xhk_planetspawner_base_DESC: "The construction site that will, after the consumption of a staggering amount of mass, result in a new planet.\nOur planet forming site can only make up to size §G30§! planets. Larger sizes will have to be created by dumping extra £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§! after construction."
  xhk_planetspawner_base_MEGASTRUCTURE_DETAILS: "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nUses £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§! and £alloys£ §YAlloys§! to fabricate §GBarren Planets§! from scratch\n§LThis construction site creates a single planet.§!\n§ROrbit lines will show on a save reload.§!"
 
  xhk_planetspawner_small: "Create a size 10 Planet"
- xhk_planetspawner_small_DESC: "Creates a size 10 planet using §G12§! £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!"
+ xhk_planetspawner_small_DESC: "Creates a size 10 planet using §G10§! £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!."
  xhk_planetspawner_medium: "Create a size 20 Planet"
- xhk_planetspawner_medium_DESC: "Creates a size 20 planet using §G25§! £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!"
+ xhk_planetspawner_medium_DESC: "Creates a size 20 planet using §G20§! £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!."
+ xhk_planetspawner_large: "Create a size 30 Planet"
+ xhk_planetspawner_large_DESC: "Creates a size 30 planet using §G30§! £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!."
 
 
 # event
