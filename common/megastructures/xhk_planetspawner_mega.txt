@@ -229,3 +229,126 @@ xhk_planetspawner_large = {
         }
     }
 }
+
+xhk_asteroidspawner_base = {
+    entity = "yggdrasil_phase_01_entity"
+    construction_entity = "yggdrasil_phase_01_entity"
+    portrait = "GFX_megastructure_construction_background"
+    place_entity_on_planet_plane = yes
+    build_type = inside_gravity_well
+    build_time = 1080 # 3 years
+
+    outliner_trigger = {
+        exists = owner
+        NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
+    }
+
+    resources = {
+        category = megastructures
+        cost = {
+            unity = 2500
+            alloys = 2500
+            giga_sr_bulk_matter = 2
+        }
+    }
+
+    #construction_blocks_and_blocked_by = self_type
+    prerequisites = { "tech_ring_world" }
+
+    potential = {
+        has_technology = tech_ring_world
+    }
+
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_inside_border"
+            is_inside_border = from
+        }
+        custom_tooltip = {
+            fail_text = "requires_surveyed_system"
+            NOT = {
+                any_system_planet = {
+                    is_surveyed = {
+                        who = prev.from
+                        status = no
+                    }
+                }
+            }
+        }
+    }
+
+    placement_rules = {
+        planet_possible = {
+            custom_tooltip = {
+                fail_text = "BUILD_MEGASTRUCTURE_PLANET_TARGET_NEEDED"	# these loc lines are inverted
+                always = no
+            }
+        }
+    }
+
+    # root = system
+    # from = country
+    ai_weight = {
+        factor = 0
+    }
+
+    on_build_start = {}
+    on_build_cancel = {}
+    on_build_complete = {
+        fromfrom = {
+            upgrade_megastructure_to = xhk_asteroidspawner_create
+            finish_upgrade = yes
+        }
+    }
+}
+
+xhk_asteroidspawner_create = {
+    entity = "terraform_barren_2_entity"
+    construction_entity = "terraform_barren_2_entity"
+    portrait = "GFX_megastructure_construction_background"
+    upgrade_from = { xhk_asteroidspawner_base }
+    scales_with_planet = no
+
+    outliner_trigger = {
+        exists = owner
+        NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
+    }
+
+    build_time = 1620 #4.5 yrs
+    resources = {
+        category = megastructures
+        cost = {
+            alloys = 1
+        }
+    }
+
+    possible = { from = { has_technology = tech_ring_world } }
+
+    ai_weight = { factor = 0 }
+    on_build_complete = {
+        fromfrom = {
+            solar_system = {
+                spawn_planet = {
+                    class = pc_asteroid
+                    name = "Created Asteroid"
+                    location = fromfrom
+                    size = 1
+                    #orbit_distance = { 0 }
+                    has_ring = no
+                    init_effect = {
+                        set_surveyed = {
+                            surveyed = yes
+                            surveyor = from
+                        }
+                        set_all_comms_surveyed = yes
+                        save_event_target_as = giga_planet
+                    }
+                }
+            }
+            remove_megastructure = this
+        }
+        from = {
+            country_event = {id = xhk_planetspawner_notif.005}
+        }
+    }
+}

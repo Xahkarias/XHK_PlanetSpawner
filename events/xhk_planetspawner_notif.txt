@@ -21,3 +21,14 @@ country_event = {
     is_triggered_only = yes
     option = { name = xhk_planetspawner_notif.002.a }
 }
+
+country_event = {
+    id = xhk_planetspawner_notif.005
+    title = xhk_planetspawner_notif.005.name
+    desc = xhk_planetspawner_notif.005.desc
+    picture = GFX_evt_tomb_world
+    show_sound = event_dyson_sphere_build_complete
+    location = event_target:giga_planet
+    is_triggered_only = yes
+    option = { name = xhk_planetspawner_notif.005.a }
+}
