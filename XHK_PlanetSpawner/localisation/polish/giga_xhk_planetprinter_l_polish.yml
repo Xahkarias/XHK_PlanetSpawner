@@ -1,0 +1,31 @@
+﻿l_polish:
+  
+  xhk_planetspawner_base:99 "$gc_giga$Planet Construction Site"
+  xhk_planetspawner_base_DESC:99 "The construction site that will, after the consumption of a staggering amount of mass, result in a new planet.\nOur planet forming site can only make up to size §G30§! planets. Larger sizes will have to be created by dumping extra £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§! after construction."
+  xhk_planetspawner_base_MEGASTRUCTURE_DETAILS:99 "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nUses £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§! and £alloys£ §YAlloys§! to fabricate §GBarren Planets§! from scratch.\n§LThis construction site creates a single planet.§!\n§ROrbit lines will show on a save reload.§!"
+  
+  xhk_planetspawner_small:99 "Create a size 10 Planet"
+  xhk_planetspawner_small_DESC:99 "Creates a size 10 planet using §G10§! £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!."
+  xhk_planetspawner_medium:99 "Create a size 20 Planet"
+  xhk_planetspawner_medium_DESC:99 "Creates a size 20 planet using §G20§! £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!."
+  xhk_planetspawner_large:99 "Create a size 30 Planet"
+  xhk_planetspawner_large_DESC:99 "Creates a size 30 planet using §G30§! £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!."
+  
+  xhk_asteroidspawner_base:99 "$gc_giga$Asteroid Construction Site"
+  xhk_asteroidspawner_base_DESC:99 "Dumping a small amount of mass at this location will result in a new asteroid."
+  xhk_asteroidspawner_base_MEGASTRUCTURE_DETAILS:99 "$giga_list_category_megastructure$ - $giga_list_category_megastructure$\nUses £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§! and £alloys£ §YAlloys§! to fabricate an §GAsteroid§! from scratch.\n§LThis construction site creates a single asteroid.§!"
+  
+  xhk_asteroidspawner_create:99 "You shouldnt be seeing this, but click me to finish the asteroid"
+  
+  # event
+  xhk_planetspawner_notif.001.name:99 "Planet Construction Site Complete"
+  xhk_planetspawner_notif.001.desc:99 "Our planet construction site is ready to begun building a planet once provided £giga_sr_bulk_matter£ §H$giga_sr_bulk_matter$§!."
+  xhk_planetspawner_notif.001.a:99 "Excellent."
+  
+  xhk_planetspawner_notif.002.name:99 "Planet Construction Complete"
+  xhk_planetspawner_notif.002.desc:99 "We have finished constructing a planet, it is now ready for colonization."
+  xhk_planetspawner_notif.002.a:99 "Excellent."
+  
+  xhk_planetspawner_notif.005.name:99 "Asteroid Construction Complete"
+  xhk_planetspawner_notif.005.desc:99 "We have finished constructing an asteroid."
+  xhk_planetspawner_notif.005.a:99 "Excellent."
