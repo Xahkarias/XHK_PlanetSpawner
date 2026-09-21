@@ -1,0 +1,43 @@
+# these overclocks are for selecting the mode for branching megas
+xhk_planetspawner_overclock_small = {
+	icon = GFX_overclock_gc_default
+	custom_tooltip = xhk_planetspawner_overclock_small_effect
+	on_overclock_start = {
+		remove_megastructure_flag = planetspawner_large
+		remove_megastructure_flag = planetspawner_medium
+	}
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 10
+		}
+	}
+}
+xhk_planetspawner_overclock_medium = {
+	icon = GFX_overclock_gc_high
+	custom_tooltip = xhk_planetspawner_overclock_medium_effect
+	on_overclock_start = {
+		remove_megastructure_flag = planetspawner_large
+		set_megastructure_flag = planetspawner_medium
+	}
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 10
+		}
+	}
+}
+xhk_planetspawner_overclock_large = {
+	icon = GFX_overclock_gc_eco
+	custom_tooltip = xhk_planetspawner_overclock_large_effect
+	on_overclock_start = {
+		remove_megastructure_flag = planetspawner_medium
+		set_megastructure_flag = planetspawner_large
+	}
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 10
+		}
+	}
+}
