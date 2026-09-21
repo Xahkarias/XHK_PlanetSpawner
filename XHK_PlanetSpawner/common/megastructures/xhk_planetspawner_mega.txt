@@ -12,6 +12,7 @@ xhk_planetspawner_base = {
         NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
     }
 
+	overclock_loc_key = GIGA_UPGRADE_CTRL
 	overclock_types = {
 		xhk_planetspawner_overclock_small
 		xhk_planetspawner_overclock_medium
