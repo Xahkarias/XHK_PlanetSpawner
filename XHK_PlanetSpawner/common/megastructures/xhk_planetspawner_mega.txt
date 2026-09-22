@@ -12,6 +12,12 @@ xhk_planetspawner_base = {
         NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
     }
 
+	overclock_loc_key = GIGA_UPGRADE_CTRL
+	overclock_types = {
+		xhk_planetspawner_overclock_small
+		xhk_planetspawner_overclock_medium
+		xhk_planetspawner_overclock_large
+	}
     resources = {
         category = megastructures
         cost = {
@@ -66,8 +72,70 @@ xhk_planetspawner_base = {
         # need a notification event
         fromfrom = {
             save_event_target_as = giga_planet
+			set_overclock = xhk_planetspawner_overclock_small
         }
         from = { country_event = {id = xhk_planetspawner_notif.001} }
+    }
+}
+
+xhk_planetspawner_small = {
+    entity = "terraform_barren_2_entity"
+    construction_entity = "terraform_barren_2_entity"
+    portrait = "GFX_megastructure_construction_background"
+    upgrade_from = { xhk_planetspawner_base }
+    scales_with_planet = no
+
+    outliner_trigger = {
+        exists = owner
+        NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
+    }
+
+    build_time = 540 #1.5 yr
+    resources = {
+        category = megastructures
+        cost = {
+            unity = 2500
+            giga_sr_bulk_matter = 10
+        }
+    }
+
+	potential = {
+		from = {
+			NOR = {
+				has_megastructure_flag = planetspawner_medium
+				has_megastructure_flag = planetspawner_large
+			}
+		}
+	}
+    possible = { from = { has_technology = giga_tech_planet_assembly } }
+
+    ai_weight = { factor = 0 }
+    on_build_complete = {
+        fromfrom = {
+            solar_system = {
+                spawn_planet = {
+                    class = pc_ll_temperate
+                    name = "Created Planet"
+                    location = fromfrom
+                    size = 10
+                    #orbit_distance = { 0 }
+                    has_ring = no
+                    init_effect = {
+                        set_surveyed = {
+                            surveyed = yes
+                            surveyor = from
+                        }
+                        set_all_comms_surveyed = yes
+                        reroll_deposits = yes
+                        save_event_target_as = giga_planet
+                    }
+                }
+            }
+            remove_megastructure = this
+        }
+        from = {
+            country_event = {id = xhk_planetspawner_notif.002}
+        }
     }
 }
 
@@ -88,10 +156,11 @@ xhk_planetspawner_medium = {
         category = megastructures
         cost = {
             unity = 2500
-            giga_sr_bulk_matter = 16
+            giga_sr_bulk_matter = 20
         }
     }
 
+	potential = { from = { has_megastructure_flag = planetspawner_medium } }
     possible = { from = { has_technology = giga_tech_planet_assembly } }
 
     ai_weight = { factor = 0 }
@@ -99,10 +168,64 @@ xhk_planetspawner_medium = {
         fromfrom = {
             solar_system = {
                 spawn_planet = {
-                    class = pc_barren
+                    class = pc_ll_temperate
                     name = "Created Planet"
                     location = fromfrom
-                    size = 16
+                    size = 20
+                    #orbit_distance = { 0 }
+                    has_ring = no
+                    init_effect = {
+                        set_surveyed = {
+                            surveyed = yes
+                            surveyor = from
+                        }
+                        set_all_comms_surveyed = yes
+                        reroll_deposits = yes
+                        save_event_target_as = giga_planet
+                    }
+                }
+            }
+            remove_megastructure = this
+        }
+        from = {
+            country_event = {id = xhk_planetspawner_notif.002}
+        }
+    }
+}
+
+xhk_planetspawner_large = {
+    entity = "terraform_barren_2_entity"
+    construction_entity = "terraform_barren_2_entity"
+    portrait = "GFX_megastructure_construction_background"
+    upgrade_from = { xhk_planetspawner_base }
+    scales_with_planet = no
+
+    outliner_trigger = {
+        exists = owner
+        NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
+    }
+
+    build_time = 1620 #4.5 yrs
+    resources = {
+        category = megastructures
+        cost = {
+            unity = 2500
+            giga_sr_bulk_matter = 30
+        }
+    }
+
+	potential = { from = { has_megastructure_flag = planetspawner_large } }
+    possible = { from = { has_technology = giga_tech_planet_assembly } }
+
+    ai_weight = { factor = 0 }
+    on_build_complete = {
+        fromfrom = {
+            solar_system = {
+                spawn_planet = {
+                    class = pc_ll_temperate
+                    name = "Created Planet"
+                    location = fromfrom
+                    size = 30
                     #orbit_distance = { 0 }
                     has_ring = no
                     init_effect = {
