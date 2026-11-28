@@ -319,6 +319,7 @@ xhk_asteroidspawner_base = {
     }
 }
 
+# i need this second stage to always force the asteroid to spawn in the correct place
 xhk_asteroidspawner_create = {
     entity = "terraform_barren_2_entity"
     construction_entity = "terraform_barren_2_entity"
